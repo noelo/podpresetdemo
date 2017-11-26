@@ -1,4 +1,16 @@
-# Demo Pod Presets
+# Pod Presets - Dynamic Configuration Demo
+The purpose of this demo is to show how k8s pod presets can be used to drive configuration settings in an application.
+
+In this demo the springboot application has different configuration depending on what profile is active. 
+
+The profile is selected by setting the Spring environment variable _SPRING_PROFILES_ACTIVE_.
+
+With this approach it's possible to add configuration/functionality for multiple environments in the application source and select which one is active via environment variables at runtime.
+
+### Benefits  
+* Configuration maps are mounted based on selectors rather than being explicitly mounted via commands
+* A single config map per environment set by the administrator drives the settings of profiles
+* Additional config maps can be added as needed
 
 ## Configuring Openshift environment (on Minishift)
 **Note** Pod Presets plugin needs to be added
